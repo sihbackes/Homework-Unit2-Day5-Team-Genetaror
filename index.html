@@ -4,9 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Team Generator</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Team Generator</h1>
+    </header>
+
+    <div class="main-container">
+      <div class="container-display">
+        <div id="inputsBtn-box">
+          <div class="addMemberBtnInput">
+            <p>Add Member</p>
+            <input type="text" id="input-add-member" />
+            <input
+              type="button"
+              value="Add"
+              id="add-member-btn"
+              onclick="addTeamMember()"
+            />
+          </div>
+          <div>
+            <p>Teams</p>
+            <div class="number-input">
+              <button
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+              ></button>
+              <input
+                class="quantity"
+                min="0"
+                name="quantity"
+                value="1"
+                type="number"
+                id="input-add-teams"
+              />
+              <button
+                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                class="plus"
+              ></button>
+            </div>
+          </div>
+        </div>
+        <div id="box-display-names">
+          <ol id="list-display-names"></ol>
+        </div>
+        <div class="last-buttons">
+          <input
+            type="button"
+            value="Assign Member"
+            id="assignBtn"
+            onclick="displayTeams(), randomTeams()"
+          />
+          <input type="button" value="Reset" id="resetBtn" />
+        </div>
+      </div>
+
+      <div id="container-teams">
+        <div id="container-title"></div>
+      </div>
+    </div>
+  </body>
 </html>
